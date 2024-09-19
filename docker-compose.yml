@@ -1,0 +1,22 @@
+services:
+  website1:
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    ports:
+      - "80:80"
+    container_name: website1
+    restart: unless-stopped
+    mem_limit: 100M
+    cpus: '0.50'
+
+  website2:
+    build:
+      context: .
+      dockerfile: Dockerfile2
+    ports:
+      - "81:80"
+    container_name: website2
+    restart: unless-stopped
+    mem_limit: 100M
+    cpus: '0.50'
